@@ -63,8 +63,10 @@ angular.module("UrlApp", ['ngAnimate', 'ngRoute', 'ngMessages'])
         return ctrl.q;
       },
       function(q) {
-        $location.path('/urls').search({ q : q });
-        $rootScope.q = q;
+        if(q && q.length) {
+          $location.path('/urls').search({ q : q });
+          $rootScope.q = q;
+        }
       });
   }])
 

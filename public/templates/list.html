@@ -17,14 +17,14 @@
   </tbody>
   <tbody ng-if="listCtrl.results.length > 0">
     <tr ng-repeat="url in listCtrl.results | filter:q" class="url-listing">
-      <td>
+      <td class="listing-title">
         <a ng-href="#/edit/{{ url.id }}">{{ url.title }}</a>
       </td>
-      <td>{{ url.url }}</td>
-      <td>
+      <td class="listing-url">{{ url.url }}</td>
+      <td class="listing-shortened-url">
         <a target="_blank" ng-href="{{ url.actual_url }}">{{ url.shortened_url }}</a>
       </td>
-      <td>
+      <td class="listing-actions">
         <button class="btn btn-danger" ng-click="listCtrl.destroy(url)">Delete</button>
         <a ng-href="#/edit/{{ url.id }}" class="btn btn-primary">Edit</button>
       </td>

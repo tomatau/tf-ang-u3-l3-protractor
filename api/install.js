@@ -4,7 +4,7 @@ var colors = require('colors');
 var db = require('./db');
 
 if (fs.existsSync(db.file)) {
-  console.warn(("\n   The database file \"" + db.file + "\" already exists... Please remove it if you wish to re-install\n").red);
+  console.log(("\n   The database file \"" + db.file + "\" already exists... Please remove it if you wish to re-install\n").yellow);
   return;
 }
 
