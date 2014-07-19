@@ -43,7 +43,7 @@ gulp.task('serve:test', function() {
 
 var protractor = require("gulp-protractor").protractor;
 
-gulp.task('test:e2e', function() {
+gulp.task('run-e2e-tests', function() {
   gulp.src(["./e2e-tests/**/*Spec.js"])
       .pipe(protractor({
           configFile: "protractor.js",
@@ -54,4 +54,4 @@ gulp.task('test:e2e', function() {
 
 gulp.task('default', ['serve:dev']);
 
-gulp.task('test', ['install:test', 'test:e2e']);
+gulp.task('test:e2e', ['install:test', 'run-e2e-tests']);
