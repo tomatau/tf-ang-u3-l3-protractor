@@ -7,7 +7,7 @@ var fs = require('fs');
 gulp.task('install', function() {
   gulp.src('api/install.js')
     .pipe(shell([
-      'node api/install.js'
+      'NODE_ENV=INSTALL node api/install.js'
     ])); 
 });
 
@@ -43,9 +43,9 @@ gulp.task('serve:test', function() {
 
 function runProtractor(debug) {
   return function() {
-    var args = ['--baseUrl', 'http://127.0.0.1:8000'];
+    var args;// = ['--baseUrl', 'http://127.0.0.1:8000'];
     if(debug) {
-      args.unshift('debug');
+      // args.unshift('debug');
     }
     gulp.src(["./e2e-tests/**/*Spec.js"])
         .pipe(protractor({
